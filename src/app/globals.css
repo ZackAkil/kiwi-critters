@@ -144,6 +144,6 @@ body {
   transform: rotateY(180deg);
 }
 
-.is-flipped > .card-inner-preserve3d {
+.card-inner-preserve3d.is-flipped {
   transform: rotateY(180deg);
 }
