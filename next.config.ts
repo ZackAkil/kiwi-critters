@@ -1,4 +1,7 @@
-import type {NextConfig} from 'next';
+// next.config.js
+import type { NextConfig } from 'next';
+
+const isProd = process.env.NODE_ENV === 'production'; // Helpful for conditional settings
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -20,6 +23,11 @@ const nextConfig: NextConfig = {
     ],
     unoptimized: true, // Required for static export with next/image
   },
+  
+  // --- ADD THESE LINES FOR GITHUB PAGES ---
+  basePath: isProd ? '/kiwi-critters' : '', // Your repository name
+  assetPrefix: isProd ? '/kiwi-critters/' : '', // Your repository name with trailing slash
+  // ----------------------------------------
 };
 
 export default nextConfig;
